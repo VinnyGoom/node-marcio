@@ -1,9 +1,14 @@
 const exprees = require('express')
+const path = require("path")
+
+ 
 
 const app= exprees()
 
+const caminho = path.join(__dirname, 'templates') 
+
 app.get('/', (requisicao, resposta)=> {
-    resposta.send('Seja bem vindo (a) ao meu serv!')
+    resposta.sendFile(`${caminho}/index.html`)
 
 })
 
